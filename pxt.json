@@ -2,7 +2,9 @@
     "name": "PingPong",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "pxt-button-combos": "github:jwunderl/pxt-button-combos#v0.0.24",
+        "mouse": "*"
     },
     "files": [
         "main.blocks",
