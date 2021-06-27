@@ -9,8 +9,13 @@ controller.combos.attachCombo(controller.combos.idToString(controller.combos.ID.
     Player2.setVelocity(0, -85)
 })
 sprites.onOverlap(SpriteKind.Player2, SpriteKind.Ball, function (sprite, otherSprite) {
-    Ball.setVelocity(Ball_fart_2, randint(-40, 40))
+    if (Player2.y < Ball.y) {
+        Ball.setVelocity(Ball_fart_2, randint(9, 50))
+    } else if (Player2.y > Ball.y) {
+        Ball.setVelocity(Ball_fart_2, randint(-9, -50))
+    }
     Ball_fart_2 += -5
+    pause(100)
 })
 controller.combos.attachCombo(controller.combos.idToString(controller.combos.ID.down), function () {
     Player1.setVelocity(0, 85)
@@ -324,8 +329,13 @@ controller.combos.attachCombo(controller.combos.idToString(controller.combos.ID.
     Player1.setVelocity(0, -85)
 })
 sprites.onOverlap(SpriteKind.Player1, SpriteKind.Ball, function (sprite, otherSprite) {
-    Ball.setVelocity(Ball_fart, randint(-40, 40))
+    if (Player1.y < Ball.y) {
+        Ball.setVelocity(Ball_fart, randint(9, 50))
+    } else if (Player1.y > Ball.y) {
+        Ball.setVelocity(Ball_fart, randint(-9, -50))
+    }
     Ball_fart += 5
+    pause(100)
 })
 sprites.onOverlap(SpriteKind.Ball, SpriteKind.KantVenstre, function (sprite, otherSprite) {
     info.player2.changeScoreBy(1)
